@@ -2,9 +2,9 @@ const request = require('request');
 // const constants = require('../config');
 
 const weatherData = (address, callback) => {
-    const url = process.env.BASE_URL + encodeURIComponent(address) + '&appid=' + process.env.SECRET_KEY;
+    const url = process.env.BASE_URL + encodeURIComponent(address) +"&units=metric"+ '&appid=' + process.env.SECRET_KEY;
     request({url, json:true}, (error, {body})=> {
-        // console.log(body);
+        console.log(body);
 
         if(error) {
             callback("Can't fetch data from open weather map api ", undefined)
