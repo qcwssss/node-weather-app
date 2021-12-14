@@ -33,17 +33,17 @@ app.get('/weather', (req, res) => {
             error: "You must enter address in search text box"
         })
     }
-
-    weatherData(address, (error, {temperature, description, cityName} = {}) => {
+    weatherData(address, (error, {temperature, description, cityName, weather_icon} = {}) => {
         if(error) {
             return res.send({
                 error
             })
         }
-        console.log(temperature, description, cityName);
+        console.log(temperature, description, cityName, weather_icon);
         res.send({
             temperature,
             description,
+            weather_icon,
             cityName
         })
     })
