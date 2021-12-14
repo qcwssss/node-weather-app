@@ -16,7 +16,16 @@ const dateElement = document.querySelector('.date');
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 dateElement.textContent = new Date().getDate() + ", " + monthNames[new Date().getMonth()].substring(0, 3);
-document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + "Vancouver" + "')";
+
+beforeSubmit();
+function beforeSubmit() {
+    const van = "Vancouver"
+    // const locationApi = fetchWeather + "?address=" + van;
+    // locationElement.textContent = van;
+
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + van + "')";
+
+}
 
 
 
